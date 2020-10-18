@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+.history
+Thumbs.db
+
+
+# IDE
+.idea
+*.sublime*
+.vscode
+
+# Helpers
+*.log*
+node_modules/
+
+# Output / build
+dist
