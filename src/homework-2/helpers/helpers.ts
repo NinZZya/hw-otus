@@ -1,1 +1,2 @@
-export const isNumber = (item: string): boolean => !isNaN(Number(item));
+const regexp = /\S/;
+export const isNumber = (item: string): boolean => regexp.test(item) && !isNaN(Number(item));
