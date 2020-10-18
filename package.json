@@ -9,7 +9,7 @@
     "dev": "npx webpack-dev-server --open",
     "lint": "npx eslint --ext .js,.jsx,.ts,.tsx --fix ./",
     "test": "npx jest",
-    "check": "npm run lint"
+    "check": "npm run test && npm run lint"
   },
   "husky": {
     "hooks": {
