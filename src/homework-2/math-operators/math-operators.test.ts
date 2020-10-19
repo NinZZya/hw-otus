@@ -1,4 +1,4 @@
-import { mul, div, add, minus } from "./math-perators";
+import { mul, div, add, minus, pow } from "./math-perators";
 
 describe("mathOperators test cases", () => {
   it("mul 1 * 2 to equal 2", () => {
@@ -23,5 +23,8 @@ describe("mathOperators test cases", () => {
 
   it("minus 4 - 2 to equal 2", () => {
     expect(minus(4, 2)).toBe(2);
+  });
+  it("minus 2 - 10 to equal 1024", () => {
+    expect(pow(2, 10)).toBe(1024);
   });
 });
