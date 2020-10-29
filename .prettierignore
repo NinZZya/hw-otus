@@ -1,4 +1,16 @@
+.DS_Store
+Thumbs.db
 .history
+
+.idea
+*.sublime*
 .vscode
+
+*.log*
 node_modules
 dist
+artefact
+dist/bundle.js
+dist/bundle.js.map
+
+storybook-static

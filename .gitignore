@@ -1,17 +1,16 @@
-# OS
 .DS_Store
-.history
 Thumbs.db
+.history
 
-
-# IDE
 .idea
 *.sublime*
 .vscode
 
-# Helpers
 *.log*
-node_modules/
-
-# Output / build
+node_modules
 dist
+artefact
+dist/bundle.js
+dist/bundle.js.map
+
+storybook-static

@@ -1,7 +1,6 @@
 export type UnaryOperationType = (value: number) => number;
 export type BinaryOperationType = (first: number, second: number) => number;
 
-
 export const mul: BinaryOperationType = (
   first: number,
   second: number
@@ -22,13 +21,14 @@ export const minus: BinaryOperationType = (
   second: number
 ): number => first - second;
 
-
 export const pow: BinaryOperationType = (
   first: number,
   second: number
 ): number => Math.pow(first, second);
 
-export const mathOperators: { [key: string]: UnaryOperationType | BinaryOperationType } = {
+export const mathOperators: {
+  [key: string]: UnaryOperationType | BinaryOperationType;
+} = {
   "*": mul,
   "/": div,
   "+": add,
