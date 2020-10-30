@@ -4,17 +4,13 @@
 // А возвращает только initial и inWork
 // Нужно заменить FIXME на правильный тип вычисленный на основе Order
 
-type FIXME =
-  | {
-      state: "initial";
-      sum: number;
-    }
-  | {
-      state: "inWork";
-      sum: number;
-      workerId: number;
-    }
-  | null;
+
+type S =
+  | { state: "initial"; }
+  | { state: "inWork"; }
+
+type FIXME = Extract<Order, S> | null;
+
 
 type Order =
   | {

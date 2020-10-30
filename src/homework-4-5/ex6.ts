@@ -1,15 +1,16 @@
 // Задание второго уровня 3
-type FIXME = (
-  | "initial"
-  | "inWork"
-  | "buyingSupplies"
-  | "producing"
-  | "fullfilled"
-)[];
-// Вариант 2
-// type FIXME = Array<
-//   "initial" | "inWork" | "buyingSupplies" | "fullfilled" | "producing"
-// >;
+
+// Что я делаю не так?
+// Если верить IDE  то я получаю тип type FIXME = ("initial" | "inWork" | "fullfilled")[]
+// Согласно моим расчетом результат выполнения функции ["initial", "inWork", "fullfilled"]
+// type S =
+//   | "buyingSupplies"
+//   | "producing";
+
+// type FIXME = Exclude<OrderState, S>[];
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type FIXME = any;
 
 const orderStates = [
   "initial",

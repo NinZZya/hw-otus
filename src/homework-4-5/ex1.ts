@@ -2,10 +2,7 @@
 // В функцию приходит массив состояний заказа и фильтруется
 // Нужно заменить FIXME на тип который вычисляется на освове OrderState
 
-// Вариант1
-type FIXME = ("initial" | "inWork" | "fullfilled")[];
-// Вариант 2
-// type FIXME = Array<"initial" | "inWork" | "fullfilled">;
+type FIXME = OrderState[];
 
 const orderStates = [
   "initial",
