@@ -4,13 +4,9 @@
 // А возвращает только initial и inWork
 // Нужно заменить FIXME на правильный тип вычисленный на основе Order
 
-
-type S =
-  | { state: "initial"; }
-  | { state: "inWork"; }
+type S = { state: "initial" } | { state: "inWork" };
 
 type FIXME = Extract<Order, S> | null;
-
 
 type Order =
   | {
