@@ -4,17 +4,11 @@ import React from "react";
 // Нужно заменить FIXME на правильный тип
 
 // Так не пошло
-// type FIXME<Т> = Т extends { defaultProps: infer U; } ? U : never;
-// И так не пошло
-// type FIXME<Т> = Т extends { defaultProps: infer U; } ? typeof Т["defaultProps"] : never;
-// Подсматривал тут
-// https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types
-
-type FIXME<Т> = any;
+type FIXME<Т> = Т extends { defaultProps: infer U; } ? U : never;
 
 // Hint: infer
 export const getDefaultProps = <T>(
   component: React.ComponentType<T>
 ): FIXME<T> => {
-  return component.defaultProps;
+  return component.defaultProps as FIXME<T>;
 };
