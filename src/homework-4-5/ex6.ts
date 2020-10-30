@@ -1,10 +1,7 @@
 // Задание второго уровня 3
-type S =
-  | "buyingSupplies"
-  | "producing";
+type S = "buyingSupplies" | "producing";
 
 type FIXME = Exclude<OrderState, S>[];
-
 
 const orderStates = [
   "initial",

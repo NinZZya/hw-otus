@@ -3,8 +3,7 @@ import React from "react";
 // Есть функция которая достает из реакт компонента (любого, и Functional и Class) его defaultProps
 // Нужно заменить FIXME на правильный тип
 
-// Так не пошло
-type FIXME<Т> = Т extends { defaultProps: infer U; } ? U : never;
+type FIXME<Т> = Т extends { defaultProps: infer U } ? U : never;
 
 // Hint: infer
 export const getDefaultProps = <T>(
