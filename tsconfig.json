@@ -6,7 +6,15 @@
     "jsx": "react",
     "sourceMap": true,
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "./"
   },
-  "exclude": ["**/dist/**/*.d.ts", "dist", "node_modules"],
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "**/dist/**/*.d.ts",
+    "dist",
+    "node_modules"
+  ],
 }

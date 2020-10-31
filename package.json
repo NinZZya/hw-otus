@@ -7,7 +7,10 @@
     "start": "npx webpack-dev-server --mode development --open --hot",
     "build": "npx webpack --mode production",
     "lint": "npx eslint --ext .js,.jsx,.ts,.tsx --fix ./",
+    "loki:update": "npm run build-storybook && npx loki update --requireReference --reactUri file:./storybook-static",
+    "loki:approve": "npx loki approve",
     "test": "npx jest",
+    "test:loki": "npm run build-storybook && npx loki --requireReference --reactUri file:./storybook-static",
     "check": "npm run lint && npm test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -30,6 +33,7 @@
     "@storybook/react": "6.0.26",
     "@storybook/source-loader": "6.0.26",
     "@types/jest": "26.0.14",
+    "@types/node": "14.14.6",
     "@types/react": "16.9.53",
     "@types/react-dom": "16.9.8",
     "@types/react-router-dom": "5.1.6",
@@ -69,5 +73,20 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-konva": "16.13.0-6"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }
