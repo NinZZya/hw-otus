@@ -20,4 +20,6 @@ export const getRandomUSD = (): number =>
   BASE_USD + getRandomInt(Range.MIN, Range.MAX) * getRandomSign();
 
 export const getRandomColor = (): string =>
-  `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, "0")}`;
