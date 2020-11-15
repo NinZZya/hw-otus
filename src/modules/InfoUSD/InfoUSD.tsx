@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { ErrorBoundry, Message } from "../../componets";
-import { Course, MaxCourse, PanicCourse } from "./components";
-import { getRandomUSD } from "../../utils/utils";
+import { Course, MaxCourse, PanicCourse, RandomCourse } from "./components";
+import { AppApi } from "../../services/AppApi";
 
 const UPDATE_TIME = 2 * 1000;
 
@@ -36,10 +36,11 @@ export class InfoUSD extends React.Component<InfoUSDProp, InfoUSDState> {
   }
 
   componentDidMount(): void {
-    this.interval = setInterval(
-      () => this.setState({ value: getRandomUSD() }),
-      UPDATE_TIME
-    );
+    this.interval = setInterval(() => {
+      AppApi.getRandomUSDAsync().then((value) => {
+        this.setState({ value });
+      });
+    }, UPDATE_TIME);
   }
 
   componentWillUnmount(): void {
@@ -61,6 +62,7 @@ export class InfoUSD extends React.Component<InfoUSDProp, InfoUSDState> {
           >
             <PanicCourse value={value} />
           </ErrorBoundry>
+          <RandomCourse />
         </DataContainer>
       </div>
     );
