@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MaxCourse render coorectly 1`] = `
+<div
+  className="css-1y7yulv"
+>
+  <span
+    className="css-1n9rj5f"
+    color="#00ff00"
+  >
+    •
+  </span>
+  <span>
+    Max course:
+  </span>
+  <span
+    className="css-l3kone"
+  >
+    $0
+  </span>
+</div>
+`;

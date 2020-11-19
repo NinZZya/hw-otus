@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message render coorectly 1`] = `
+<div
+  className="css-101b6q5"
+/>
+`;

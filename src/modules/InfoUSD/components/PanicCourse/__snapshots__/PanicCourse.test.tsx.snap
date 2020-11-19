@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MaxCourse render coorectly 1`] = `
+<div
+  className="css-1y7yulv"
+>
+  <span
+    className="css-15rxe6g"
+    color="#000"
+  >
+    •
+  </span>
+  <span>
+    If the course is grov than $1, you have panic
+  </span>
+  <span>
+    If the panic counter is 3, there will be an error
+  </span>
+  <span
+    className="css-l3kone"
+  >
+    Panic count: 0
+  </span>
+</div>
+`;

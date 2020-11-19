@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Indicator render coorectly 1`] = `
+<span
+  className="css-18r9kwf"
+  color="#ff0000"
+>
+  •
+</span>
+`;

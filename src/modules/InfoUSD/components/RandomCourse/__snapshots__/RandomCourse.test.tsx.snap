@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RandomCourse render coorectly 1`] = `
+<div
+  className="css-1y7yulv"
+>
+  <span
+    className="css-21d7o5"
+    color="#ff0000"
+  >
+    •
+  </span>
+  <span>
+    For get Random Course from server press "U":
+  </span>
+  <span
+    className="css-l3kone"
+  >
+    $0
+  </span>
+</div>
+`;

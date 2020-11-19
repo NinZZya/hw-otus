@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label render coorectly 1`] = `
+<span
+  className="css-l3kone"
+>
+  test
+</span>
+`;

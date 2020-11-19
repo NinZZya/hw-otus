@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Course render coorectly 1`] = `
+<div
+  className="css-1y7yulv"
+>
+  <span
+    className="css-15rxe6g"
+    color="#000"
+  >
+    •
+  </span>
+  <span>
+    Current course:
+  </span>
+  <span
+    className="css-l3kone"
+  >
+    $0
+  </span>
+</div>
+`;
