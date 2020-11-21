@@ -62,7 +62,7 @@ export class InfoUSD extends React.Component<InfoUSDProp, InfoUSDState> {
           >
             <PanicCourse value={value} />
           </ErrorBoundry>
-          <RandomCourse />
+          <RandomCourse currency="$" onGetCourse={AppApi.getRandomUSDAsync} />
         </DataContainer>
       </div>
     );
