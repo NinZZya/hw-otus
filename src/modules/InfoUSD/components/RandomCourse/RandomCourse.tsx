@@ -1,13 +1,13 @@
 import React from "react";
 import { Card, Indicator, Label } from "../../../../componets";
 import { getRandomColor } from "../../../../utils/utils";
-import { AppApi } from "../../../../services/AppApi";
 
 const isUPressed = (evt: KeyboardEvent): boolean =>
   evt.key === "U" || evt.key === "u";
 
 interface RandomCourseProp {
-  [key: string]: unknown;
+  currency: string;
+  onGetCourse: () => Promise<number>;
 }
 
 interface RandomCourseState {
@@ -30,8 +30,9 @@ export class RandomCourse extends React.Component<
   }
 
   private handleUPressed(evt: KeyboardEvent): void {
+    const { onGetCourse } = this.props;
     if (isUPressed(evt)) {
-      AppApi.getRandomUSDAsync().then((value) => {
+      onGetCourse().then((value: number) => {
         this.setState({
           value,
           color: getRandomColor(),
@@ -49,13 +50,14 @@ export class RandomCourse extends React.Component<
   }
 
   render(): React.ReactNode {
+    const { currency } = this.props;
     const { value, color } = this.state;
 
     return (
       <Card>
         <Indicator type={"card"} color={color} />
         <span>{`For get Random Course from server press "U":`}</span>
-        <Label value={`$${value}`} />
+        <Label value={`${currency}${value}`} />
       </Card>
     );
   }
