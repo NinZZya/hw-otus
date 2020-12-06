@@ -23,9 +23,9 @@ const DefaultColor = {
 
 const getCardStyle = (theme: Theme): SerializedStyles => css`
   padding: 1rem;
-  color: ${theme.color ? theme.color.text : DefaultColor.TEXT},
+  color: ${theme.color ? theme.color.text : DefaultColor.TEXT};
   background-color: ${theme.color ? theme.color.surface : DefaultColor.TEXT};
-  border: 1px solid  ${theme.color ? theme.color.border : DefaultColor.BORDER};
+  border: 1px solid ${theme.color ? theme.color.border : DefaultColor.BORDER};
   border-radius: 0.3rem;
   width: 100%;
   margin: 0.5rem;
