@@ -19,6 +19,8 @@ const bars = [
     label: "USA",
     margin: 20,
     padding: 20,
+    barColor: "",
+    textColor: "",
   },
   {
     x: 140,
@@ -29,6 +31,8 @@ const bars = [
     label: "RUSSIA",
     margin: 20,
     padding: 20,
+    barColor: "",
+    textColor: "",
   },
   {
     x: 260,
@@ -39,6 +43,8 @@ const bars = [
     label: "GERMANY",
     margin: 20,
     padding: 20,
+    barColor: "",
+    textColor: "",
   },
   {
     x: 380,
@@ -49,6 +55,8 @@ const bars = [
     label: "SPAIN",
     margin: 20,
     padding: 20,
+    barColor: "",
+    textColor: "",
   },
 ];
 

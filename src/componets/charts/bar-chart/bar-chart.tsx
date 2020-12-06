@@ -1,20 +1,12 @@
 import React from "react";
-import { Stage, Layer, Rect, Text } from "react-konva";
+import { Stage, Layer } from "react-konva";
 /** @jsx jsx */
-import { jsx } from "@emotion/core";
+import { jsx, css, useTheme } from "@emotion/react";
+import { Bar } from "./components/bar/bar";
+import { createBars } from "./utils/bar-chart";
+import { SerializedStyles } from "@emotion/utils/types";
 
-interface BarProp {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  value: number;
-  label: string;
-  margin: number;
-  padding: number;
-}
-
-interface BarChartProp {
+export interface BarChartProp {
   type?: "verticall" | "horizontally";
   margin: number;
   padding: number;
@@ -23,80 +15,42 @@ interface BarChartProp {
   barWidth?: number;
   values: number[];
   labels: string[];
+  barColor?: string;
+  textColor?: string;
 }
 
-enum Color {
-  PRIMARY = "#3700b3",
-  SECONDARY = "#2a2a2a",
-  BACKGROUND = "#000000",
-  SURFACE = "#121212",
-  TEXT = "#ffffff",
-  BORDER = "#111111",
-  ERROR = "#cf6679",
-  SHADOW_BORDER = "rgba(255, 255, 255, 0.1)",
+interface Theme {
+  color?: {
+    text: string;
+    surface: string;
+    border: string;
+  };
 }
 
-const TEXT_GAP = 15;
-const BAR_COLOR = Color.PRIMARY;
-const TEXT_COLOR = Color.TEXT;
-
-const styleChart = {
-  padding: "1rem",
-  backgroundColor: Color.SURFACE,
-  borderRadius: "0.3rem",
+const DefaultColor = {
+  TEXT: "#ffffff",
+  SURFACE: "#121212",
+  BORDER: "#111111",
 };
 
-export const createBars = (chart: BarChartProp): BarProp[] => {
-  // height = margin * 2 (margin top and margin bottom) - text gap * 2 (value and label) -  padding* 2 (paddings for value and label)
-  const height =
-    chart.height - chart.margin * 2 - TEXT_GAP * 2 - chart.padding * 2;
-  const count = chart.values.length;
-  // width = (width chart - margin * 2 (margin top and margin bottom) - bar paddings) / bar count
-  const width = Math.floor(
-    (chart.width - chart.margin * 2 - chart.padding * (count - 1)) / count
-  );
-
-  const barWidth =
-    chart.barWidth && chart.barWidth < width ? chart.barWidth : width;
-
-  const maxValue = Math.max(...chart.values);
-
-  const bars = chart.values.map((value, index) => {
-    const barHeight = Math.floor((value / maxValue) * height);
-
-    return {
-      x: chart.margin + index * (width + chart.padding),
-      y: chart.margin + height - barHeight + TEXT_GAP + chart.padding,
-      width: barWidth,
-      height: barHeight,
-      value: Math.round(value),
-      label: chart.labels[index],
-      margin: chart.margin,
-      padding: chart.padding,
-    };
-  });
-
-  return bars;
-};
-
-const Bar: React.FC<BarProp> = (props) => {
-  const { x, y, width, height, value, label, margin, padding } = props;
-  const valueY = y - margin - padding;
-  const labelY = y + height + padding;
-  return (
-    <>
-      <Text text={String(value)} fill={TEXT_COLOR} x={x} y={valueY} />
-      <Rect x={x} y={y} width={width} height={height} fill={BAR_COLOR} />
-      <Text text={label} fill={TEXT_COLOR} x={x} y={labelY} />
-    </>
-  );
-};
+const getBarChartStyle = (theme: Theme): SerializedStyles => css`
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  color: ${theme.color ? theme.color.text : DefaultColor.TEXT};
+  background-color: ${theme.color ? theme.color.surface : DefaultColor.TEXT};
+  border: 1px solid ${theme.color ? theme.color.border : DefaultColor.BORDER};
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+`;
 
 export const BarChart: React.FC<BarChartProp> = (props) => {
+  const theme = useTheme();
   const bars = createBars(props);
 
   return (
-    <div css={styleChart}>
+    <div css={getBarChartStyle(theme)}>
       <Stage width={props.width} height={props.height}>
         <Layer>
           {bars.map((bar, index) => (
