@@ -57,7 +57,7 @@ export const createBars = (chart: BarChartProp): BarProp[] => {
   );
 
   const barWidth =
-    chart.barWidth && chart.barWidth < width ? chart.barWidth : chart.width;
+    chart.barWidth && chart.barWidth < width ? chart.barWidth : width;
 
   const maxValue = Math.max(...chart.values);
 
