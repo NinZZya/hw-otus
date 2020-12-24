@@ -20,7 +20,6 @@ const DefaultStyle = {
 
 const getColStyle = (style: ColProp): SerializedStyles => css`
   display: flex;
-  flex-direction: column;
   justify-content: ${style.justifyContent
     ? style.justifyContent
     : DefaultStyle.JUSTIFY_CONTENT};

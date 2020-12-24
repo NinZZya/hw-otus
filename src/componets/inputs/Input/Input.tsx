@@ -25,6 +25,7 @@ const getStyleInput = (theme: Theme): SerializedStyles => css`
   margin: 1rem 0;
   padding: 1rem;
   width: 100%;
+  height: 4em;
   border: 1px solid
     ${theme.color ? theme.color.shadowBorder : DefaultColor.SHADOW_BORDER};
   box-sizing: border-box;

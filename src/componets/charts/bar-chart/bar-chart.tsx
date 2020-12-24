@@ -15,7 +15,7 @@ export interface BarChartProp {
   barWidth?: number;
   values: number[];
   labels: string[];
-  barColor?: string;
+  barColors?: string[];
   textColor?: string;
 }
 
@@ -33,9 +33,17 @@ const DefaultColor = {
   BORDER: "#111111",
 };
 
-const getBarChartStyle = (theme: Theme): SerializedStyles => css`
-  width: 100%;
-  height: 100%;
+const DefaultStyle = {
+  WIDTH: "100%",
+  HEIGHT: "100%",
+};
+
+const getBarChartStyle = (
+  theme: Theme,
+  props: BarChartProp
+): SerializedStyles => css`
+  width: ${props.width ? props.width : `${DefaultStyle.WIDTH}px`};
+  height: ${props.height ? props.height : `${DefaultStyle.HEIGHT}px`};
   margin: 0;
   padding: 1rem;
   color: ${theme.color ? theme.color.text : DefaultColor.TEXT};
@@ -50,7 +58,7 @@ export const BarChart: React.FC<BarChartProp> = (props) => {
   const bars = createBars(props);
 
   return (
-    <div css={getBarChartStyle(theme)}>
+    <div css={getBarChartStyle(theme, props)}>
       <Stage width={props.width} height={props.height}>
         <Layer>
           {bars.map((bar, index) => (

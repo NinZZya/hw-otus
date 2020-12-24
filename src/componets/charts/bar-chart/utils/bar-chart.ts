@@ -30,7 +30,7 @@ export const createBars = (chart: BarChartProp): BarProp[] => {
       label: chart.labels[index],
       margin: chart.margin,
       padding: chart.padding,
-      barColor: chart.barColor ? chart.barColor : "",
+      barColor: chart.barColors ? chart.barColors[index] : "",
       textColor: chart.textColor ? chart.textColor : "",
     };
   });
