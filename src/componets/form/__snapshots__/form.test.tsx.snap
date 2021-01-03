@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form render coorectly Form with components render coorectly 1`] = `
+<form
+  css={
+    Object {
+      "map": undefined,
+      "name": "1ga4see",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  padding: 3rem;
+  margin: 3rem;
+  color: #ffffff;
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  background-color: #121212;
+",
+      "toString": [Function],
+    }
+  }
+>
+  <input />
+  <input />
+  <button />
+</form>
+`;
+
+exports[`Form render coorectly Form without props render coorectly 1`] = `
+<form
+  css={
+    Object {
+      "map": undefined,
+      "name": "1ga4see",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  padding: 3rem;
+  margin: 3rem;
+  color: #ffffff;
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  background-color: #121212;
+",
+      "toString": [Function],
+    }
+  }
+/>
+`;

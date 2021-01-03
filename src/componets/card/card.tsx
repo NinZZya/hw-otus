@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { Children, FC, ReactNode } from "react";
 /** @jsx jsx */
 import { jsx, css, useTheme } from "@emotion/react";
 import { SerializedStyles } from "@emotion/utils/types";
@@ -11,8 +11,8 @@ interface Theme {
   };
 }
 
-interface ButtonProp {
-  [key: string]: string | boolean | undefined;
+interface CardProp {
+  [key: string]: string | boolean | ReactNode[] | Element[] | undefined;
 }
 
 const DefaultColor = {
@@ -32,8 +32,12 @@ const getCardStyle = (theme: Theme): SerializedStyles => css`
   box-sizing: border-box;
 `;
 
-export const Card: FC<ButtonProp> = (props) => {
+export const Card: FC<CardProp> = (props) => {
   const theme = useTheme();
 
-  return <div css={getCardStyle(theme)} {...props} />;
+  return (
+    <div css={getCardStyle(theme)} {...props}>
+      {Children.map(props.children, (child) => child)}
+    </div>
+  );
 };

@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input render coorectly Input with value render coorectly 1`] = `
+<input
+  css={
+    Object {
+      "map": undefined,
+      "name": "10feahb",
+      "next": undefined,
+      "styles": "
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 100%;
+  height: 4em;
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+
+  &:focus,
+  &:hover,
+  &:active,
+  &:selected {
+    border: 1px solid
+      rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 5px 1px
+      rgba(255, 255, 255, 0.1);
+  }
+",
+      "toString": [Function],
+    }
+  }
+  value="value"
+/>
+`;
+
+exports[`Input render coorectly Input without props render coorectly 1`] = `
+<input
+  css={
+    Object {
+      "map": undefined,
+      "name": "10feahb",
+      "next": undefined,
+      "styles": "
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 100%;
+  height: 4em;
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+
+  &:focus,
+  &:hover,
+  &:active,
+  &:selected {
+    border: 1px solid
+      rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 5px 1px
+      rgba(255, 255, 255, 0.1);
+  }
+",
+      "toString": [Function],
+    }
+  }
+/>
+`;

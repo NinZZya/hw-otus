@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card render coorectly Card with text render coorectly 1`] = `
+<div
+  css={
+    Object {
+      "map": undefined,
+      "name": "15qfz52",
+      "next": undefined,
+      "styles": "
+  padding: 1rem;
+  color: #ffffff;
+  background-color: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 0.3rem;
+  width: 100%;
+  margin: 0.5rem;
+  box-sizing: border-box;
+",
+      "toString": [Function],
+    }
+  }
+>
+  Card
+</div>
+`;
+
+exports[`Card render coorectly Card without props render coorectly 1`] = `
+<div
+  css={
+    Object {
+      "map": undefined,
+      "name": "15qfz52",
+      "next": undefined,
+      "styles": "
+  padding: 1rem;
+  color: #ffffff;
+  background-color: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 0.3rem;
+  width: 100%;
+  margin: 0.5rem;
+  box-sizing: border-box;
+",
+      "toString": [Function],
+    }
+  }
+/>
+`;

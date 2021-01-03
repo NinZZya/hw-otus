@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, ReactNode } from "react";
+import React from "react";
 /** @jsx jsx */
 import { jsx, css, useTheme } from "@emotion/react";
 import { SerializedStyles } from "@emotion/utils/types";
@@ -14,15 +14,13 @@ interface Theme {
   height: string;
 }
 
-type OnSubmit = (evt: FormEvent<HTMLFormElement>) => void;
-
-interface FormProp {
-  [key: string]: string | OnSubmit | ReactNode[] | Element[] | undefined;
-  onSubmit?: OnSubmit | undefined;
-  children?: ReactNode[] | Element[] | undefined;
-  width?: string | undefined;
-  height?: string | undefined;
-}
+type FormProp = React.HTMLProps<HTMLFormElement> & {
+  width?: string;
+  height?: string;
+  padding?: string;
+  margin?: string;
+  onSubmit?: (evt: React.FormEvent) => void;
+};
 
 const DefaultColor = {
   TEXT: "#ffffff",
@@ -34,14 +32,17 @@ const DefaultColor = {
 const DefaultForm = {
   WIDTH: "400px",
   HEIGHT: "500px",
+  PADDING: "3rem",
+  MARGIN: "0",
 };
 
-const getStyleForm = (theme: Theme): SerializedStyles => css`
+const getStyleForm = (theme: Theme, props: FormProp): SerializedStyles => css`
   display: flex;
   flex-direction: column;
   width: ${theme.width};
   height: ${theme.height};
-  padding: 3rem;
+  padding: ${props.padding ? props.padding : DefaultForm.PADDING};
+  margin: ${props.margin ? props.margin : DefaultForm.PADDING};
   color: ${theme.color ? theme.color.text : DefaultColor.TEXT};
   border: 1px solid
     ${theme.color ? theme.color.shadowBorder : DefaultColor.SHADOW_BORDER};
@@ -50,12 +51,12 @@ const getStyleForm = (theme: Theme): SerializedStyles => css`
   background-color: ${theme.color ? theme.color.surface : DefaultColor.SURFACE};
 `;
 
-export const Form: FC<FormProp> = (props) => {
+export const Form: React.FC<FormProp> = (props) => {
   const theme: Theme = {
     ...useTheme(),
     width: props.width ? props.width : DefaultForm.WIDTH,
     height: props.height ? props.height : DefaultForm.HEIGHT,
   };
 
-  return <form css={getStyleForm(theme)} {...props} />;
+  return <form css={getStyleForm(theme, props)} {...props} />;
 };

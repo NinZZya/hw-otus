@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row render coorectly Row with components render coorectly 1`] = `
+<div
+  css={
+    Object {
+      "map": undefined,
+      "name": "1ppfip7",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+",
+      "toString": [Function],
+    }
+  }
+>
+  <div>
+    div
+  </div>
+  <div>
+    div
+  </div>
+  <div>
+    div
+  </div>
+</div>
+`;
+
+exports[`Row render coorectly Row without props render coorectly 1`] = `
+<div
+  css={
+    Object {
+      "map": undefined,
+      "name": "1ppfip7",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+",
+      "toString": [Function],
+    }
+  }
+/>
+`;
