@@ -3,6 +3,7 @@ import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import { Global, css } from "@emotion/core";
 import darkTheme from "../themes/dark";
+import { MainScreen } from "../screens";
 
 export const App: React.FC = () => {
   return (
@@ -23,7 +24,7 @@ export const App: React.FC = () => {
           }
         `}
       />
-      <div>Hello World</div>
+      <MainScreen />
     </ThemeProvider>
   );
 };
