@@ -7,12 +7,12 @@ import { createBars } from "./utils/bar-chart";
 import { SerializedStyles } from "@emotion/utils/types";
 
 export interface BarChartProp {
-  type?: "verticall" | "horizontally";
   margin: number;
   padding: number;
   width: number;
   height: number;
   barWidth?: number;
+  barColor?: string;
   values: number[];
   labels: string[];
   barColors?: string[];
@@ -34,8 +34,8 @@ const DefaultColor = {
 };
 
 const DefaultStyle = {
-  WIDTH: "100%",
-  HEIGHT: "100%",
+  WIDTH: "100px",
+  HEIGHT: "100px",
 };
 
 const getBarChartStyle = (

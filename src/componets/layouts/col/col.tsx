@@ -1,14 +1,14 @@
-import React, { FC } from "react";
+import React from "react";
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
 import { SerializedStyles } from "@emotion/utils/types";
 
 interface ColProp {
-  [key: string]: string | undefined;
+  [key: string]: string | undefined | Element[] | React.ReactNode[];
   justifyContent?: string;
   alignItems?: string;
-  margin: string;
-  padding: string;
+  margin?: string;
+  padding?: string;
 }
 
 const DefaultStyle = {
@@ -33,6 +33,10 @@ const getColStyle = (style: ColProp): SerializedStyles => css`
   box-sizing: border-box;
 `;
 
-export const Col: FC<ColProp> = (props) => {
-  return <div css={getColStyle(props)} />;
+export const Col: React.FC<ColProp> = (props) => {
+  return (
+    <div css={getColStyle(props)}>
+      {React.Children.map(props.children, (child) => child)}
+    </div>
+  );
 };

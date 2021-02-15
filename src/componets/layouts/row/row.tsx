@@ -1,14 +1,14 @@
-import React, { FC } from "react";
+import React, { Children, FC } from "react";
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
 import { SerializedStyles } from "@emotion/utils/types";
 
 interface RowProp {
-  [key: string]: string | undefined;
+  [key: string]: string | undefined | Element[] | React.ReactNode[];
   justifyContent?: string;
   alignItems?: string;
-  margin: string;
-  padding: string;
+  margin?: string;
+  padding?: string;
 }
 
 const DefaultStyle = {
@@ -35,5 +35,9 @@ const getRowStyle = (style: RowProp): SerializedStyles => css`
 `;
 
 export const Row: FC<RowProp> = (props) => {
-  return <div css={getRowStyle(props)} />;
+  return (
+    <div css={getRowStyle(props)}>
+      {Children.map(props.children, (child) => child)}
+    </div>
+  );
 };

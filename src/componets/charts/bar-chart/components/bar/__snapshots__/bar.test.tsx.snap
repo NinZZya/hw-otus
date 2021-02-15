@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bar render coorectly Bar with data render coorectly 1`] = `
+Array [
+  <Text
+    fill="#0000000"
+    text="100"
+    x={10}
+    y={0}
+  />,
+  <Rect
+    fill="#ffffff"
+    height={100}
+    width={30}
+    x={10}
+    y={20}
+  />,
+  <Text
+    fill="#0000000"
+    text="Label"
+    x={10}
+    y={130}
+  />,
+]
+`;

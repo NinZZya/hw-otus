@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 /** @jsx jsx */
 import { jsx, css, useTheme } from "@emotion/react";
 import { SerializedStyles } from "@emotion/utils/types";
@@ -12,9 +12,10 @@ interface Theme {
   };
 }
 
-interface ButtonProp {
-  [key: string]: string | boolean | undefined;
-}
+type ButtonProp = React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
 
 const DefaultColor = {
   TEXT: "#ffffff",
@@ -53,7 +54,7 @@ const getButtonStyle = (theme: Theme): SerializedStyles => css`
   }
 `;
 
-export const Button: FC<ButtonProp> = (props) => {
+export const Button: React.FC<ButtonProp> = (props) => {
   const theme = useTheme();
 
   return <button css={getButtonStyle(theme)} {...props} />;

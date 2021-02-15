@@ -1,7 +1,7 @@
 import { createBars } from "./bar-chart";
 
 const chart = {
-  values: [14138.560000000001, 18118, 4359.84, 8901.34],
+  values: [14138.56, 18118, 4359.84, 8901.34],
   labels: ["USA", "RUSSIA", "GERMANY", "SPAIN"],
   margin: 20,
   padding: 20,
